@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">YukaLike</string>
+    <string name="signIn">Sign in</string>
+    <string name="signGoogle">Sign in with Google</string>
+    <string name="welcome">Welcome to YukaLike !</string>
+    <string name="signUp">Sign up</string>
+    <string name="noAccount">Don\'t have any account ?</string>
+    <string name="labelEmail">Email</string>
+    <string name="labelPassword">Password</string>
 </resources>
