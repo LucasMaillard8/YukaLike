@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "326679566148",
+    "project_id": "yukalikeprojetandroidesgi",
+    "storage_bucket": "yukalikeprojetandroidesgi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326679566148:android:aab49e974cf6fcb4faa911",
+        "android_client_info": {
+          "package_name": "com.yukaprojetandroidesgi.yukalike"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326679566148-ftioja94vamki48388obribm72c8teav.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqxlCkiq4i8rBQra1mDcw63AgWIgbW8bk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326679566148-ftioja94vamki48388obribm72c8teav.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
