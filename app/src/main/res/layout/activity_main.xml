@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <Button
-        android:id="@+id/signEmail"
+        android:id="@+id/signEmailButton"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <Button
-        android:id="@+id/signGoogle"
+        android:id="@+id/signInGoogleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/signGoogle"
@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signEmail"
+        app:layout_constraintTop_toBottomOf="@+id/signEmailButton"
         app:layout_constraintVertical_bias="0.2" />
 
     <TextView
