@@ -48,4 +48,9 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:28.1.0')
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database-ktx'
+
+    // Retrofit dependency
+    implementation 'com.squareup.retrofit2:retrofit:2.8.1'
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+    implementation "com.squareup.retrofit2:converter-gson:2.8.1"
 }
