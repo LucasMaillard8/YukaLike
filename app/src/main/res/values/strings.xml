@@ -7,4 +7,10 @@
     <string name="noAccount">Don\'t have any account ?</string>
     <string name="labelEmail">Email</string>
     <string name="labelPassword">Password</string>
+    <string name="scanButton">Scanner mon produit</string>
+    <string name="orText">OU</string>
+    <string name="validateBarCodeButton">Valider le code barre</string>
+    <string name="scanWithCameraText">Scanner avec ma caméra</string>
+    <string name="scanWithTextText">Entrer manuellement</string>
+    <string name="fillInBarCode">Entrer le code bar</string>
 </resources>
