@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "326679566148-isktd2nr0utf3r77mu4rgmm4uq47qjdb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yukaprojetandroidesgi.yukalike",
+            "certificate_hash": "1445eee019f43faef812ab78a9b3cbff0827f877"
+          }
+        },
+        {
           "client_id": "326679566148-ftioja94vamki48388obribm72c8teav.apps.googleusercontent.com",
           "client_type": 3
         }
