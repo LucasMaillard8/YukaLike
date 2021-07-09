@@ -17,19 +17,19 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.yukaprojetandroidesgi.yukalike.databinding.ActivityMainBinding
+import com.yukaprojetandroidesgi.yukalike.databinding.FragmentSignInBinding
 
 const val RC_SIGN_IN_GOOGLE = 2
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: FragmentSignInBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.fragment_logs)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = FragmentSignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
 
