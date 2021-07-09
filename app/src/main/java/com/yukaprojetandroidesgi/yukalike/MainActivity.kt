@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.fragment_logs)
         binding = FragmentSignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
         auth = Firebase.auth
