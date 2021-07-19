@@ -1,5 +1,6 @@
 package com.yukaprojetandroidesgi.yukalike
 
+import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
@@ -14,12 +15,14 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.yukaprojetandroidesgi.yukalike.databinding.ActivityMainBinding
 import com.yukaprojetandroidesgi.yukalike.databinding.FragmentSignInBinding
 
 class SignInFragment : Fragment(R.layout.fragment_sign_in) {
@@ -27,17 +30,37 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreate(savedInstanceState)
+        binding = FragmentSignInBinding.inflate(layoutInflater)
+
+        auth = Firebase.auth
+        // Configure Google SignIn
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(activity as Activity, gso)
+        return binding.root
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
-        val signInWithEmailButton: Button = view.findViewById(R.id.signEmailButton)
-        val email: EditText = view.findViewById(R.id.email)
-        val password: EditText = view.findViewById(R.id.password)
 
-        signInWithEmailButton.setOnClickListener {
-            print("Button pressed")
-            signIn(email.text.toString(), password.text.toString())
+        binding.signEmailButton.setOnClickListener {
+            with(binding) {
+                print("Button pressed")
+                signIn(this.email.text.toString(), this.password.text.toString())
+            }
         }
+
+        binding.signInGoogleButton.setOnClickListener { signInWithGoogle() }
     }
 
     public override fun onStart() {

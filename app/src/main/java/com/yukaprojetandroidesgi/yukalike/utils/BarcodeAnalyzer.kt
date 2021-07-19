@@ -1,4 +1,4 @@
-package com.yukaprojetandroidesgi.yukalike.services
+package com.yukaprojetandroidesgi.yukalike.utils
 
 import android.annotation.SuppressLint
 import androidx.camera.core.ImageAnalysis
@@ -12,7 +12,7 @@ class BarcodeAnalyzer(private val barcodeListener: BarcodeListener) : ImageAnaly
     // Get an instance of BarcodeScanner
     private val scanner = BarcodeScanning.getClient()
 
-    @SuppressLint("UnsafeExperimentalUsageError")
+    @SuppressLint("UnsafeExperimentalUsageError", "UnsafeOptInUsageError")
     override fun analyze(imageProxy: ImageProxy) {
         val mediaImage = imageProxy.image
         if (mediaImage != null) {
