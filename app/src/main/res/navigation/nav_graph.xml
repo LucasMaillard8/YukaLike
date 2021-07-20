@@ -5,13 +5,13 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/productScannerFragment"
-        android:name="com.yukaprojetandroidesgi.yukalike.ProductScannerFragment"
-        android:label="fragment_product_scanner"
-        tools:layout="@layout/fragment_product_scanner" >
+        android:id="@+id/signInFragment"
+        android:name="com.yukaprojetandroidesgi.yukalike.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" >
         <action
-            android:id="@+id/action_productScannerFragment_to_infoProduct"
-            app:destination="@id/infoProduct" />
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -21,15 +21,18 @@
         <action
             android:id="@+id/action_homeFragment_to_productScannerFragment"
             app:destination="@id/productScannerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_infoProduct"
+            app:destination="@id/infoProduct" />
     </fragment>
     <fragment
-        android:id="@+id/signInFragment"
-        android:name="com.yukaprojetandroidesgi.yukalike.SignInFragment"
-        android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" >
+        android:id="@+id/productScannerFragment"
+        android:name="com.yukaprojetandroidesgi.yukalike.ProductScannerFragment"
+        android:label="fragment_product_scanner"
+        tools:layout="@layout/fragment_product_scanner" >
         <action
-            android:id="@+id/action_signInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_productScannerFragment_to_infoProduct"
+            app:destination="@id/infoProduct" />
     </fragment>
     <fragment
         android:id="@+id/infoProduct"
