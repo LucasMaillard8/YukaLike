@@ -13,6 +13,7 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.yukaprojetandroidesgi.yukalike.utils.BarcodeAnalyzer
 import kotlinx.android.synthetic.main.fragment_product_scanner.*
 import java.util.concurrent.ExecutorService
@@ -56,6 +57,12 @@ class ProductScannerFragment : Fragment(R.layout.fragment_product_scanner) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         cameraExecutor = Executors.newSingleThreadExecutor()
+        scanBarcodeViewModel.navigation.observe(viewLifecycleOwner, { navDirections ->
+            navDirections?.let {
+                findNavController().navigate(navDirections)
+                scanBarcodeViewModel.doneNavigating()
+            }
+        })
         startCamera()
     }
 }

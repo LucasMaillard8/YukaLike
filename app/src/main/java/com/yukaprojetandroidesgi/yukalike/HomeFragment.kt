@@ -22,13 +22,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         val scanButton = view.findViewById<Button>(R.id.scanButton)
         scanButton.setOnClickListener {
-            if (allPermissionsGranted()) {
-                findNavController().navigate(R.id.action_homeFragment_to_productScannerFragment)
-            } else {
+            if (!allPermissionsGranted()) {
                 requestPermissions(
                     REQUIRED_PERMISSIONS,
                     REQUEST_CODE_PERMISSIONS
                 )
+            }
+            if (allPermissionsGranted()) {
+                findNavController().navigate(R.id.action_homeFragment_to_productScannerFragment)
             }
         }
     }
