@@ -1,11 +1,12 @@
 package com.yukaprojetandroidesgi.yukalike
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavDirections
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import java.lang.Exception
-import java.net.ConnectException
 
 class ScanBarcodeViewModel : ViewModel() {
 

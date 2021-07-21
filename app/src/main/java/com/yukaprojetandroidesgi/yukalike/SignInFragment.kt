@@ -5,13 +5,11 @@ import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -22,7 +20,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.yukaprojetandroidesgi.yukalike.databinding.ActivityMainBinding
 import com.yukaprojetandroidesgi.yukalike.databinding.FragmentSignInBinding
 
 class SignInFragment : Fragment(R.layout.fragment_sign_in) {
@@ -34,7 +31,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         super.onCreate(savedInstanceState)
         binding = FragmentSignInBinding.inflate(layoutInflater)
 
@@ -63,11 +60,11 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         binding.signInGoogleButton.setOnClickListener { signInWithGoogle() }
     }
 
-    public override fun onStart() {
+    override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
         if(currentUser != null){
-            reload();
+            reload()
         }
     }
 
@@ -123,7 +120,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
             Log.d(ContentValues.TAG, "task is successfull : " + task.isSuccessful)
             try {
                 // Google Sign In was successful, authenticate with Firebase
-                val account = task.getResult(ApiException::class.java)!!
+                val account = task.getResult(ApiException::class.java)
                 Log.d(ContentValues.TAG, "firebaseAuthWithGoogle:" + account.id)
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (e: ApiException) {
