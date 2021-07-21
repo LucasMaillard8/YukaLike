@@ -56,7 +56,6 @@ class ProductScannerFragment : Fragment(R.layout.fragment_product_scanner) {
         cameraExecutor = Executors.newSingleThreadExecutor()
         scanBarcodeViewModel.navigation.observe(viewLifecycleOwner, { navDirections ->
             navDirections?.let {
-                //val bundle : Bundle = bundleOf("Codebar" to "010101")
                 findNavController().navigate(navDirections)
                 scanBarcodeViewModel.doneNavigating()
             }

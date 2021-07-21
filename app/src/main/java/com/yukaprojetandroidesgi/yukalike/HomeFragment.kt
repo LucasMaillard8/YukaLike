@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.content.ContextCompat
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
@@ -38,8 +37,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val validateScanButton = view.findViewById<Button>(R.id.validateScanButton)
         validateScanButton.setOnClickListener {
             if (barCodeTextfield.text.toString().matches(Regex("[0-9]+"))){
-                val bundle : Bundle = bundleOf("Barcode" to barCodeTextfield.text.toString())
-                findNavController().navigate(R.id.action_homeFragment_to_infoProduct, bundle)
+                //val bundle : Bundle = bundleOf("Barcode" to barCodeTextfield.text.toString())
+                //findNavController().navigate(R.id.action_homeFragment_to_infoProduct, bundle)
+                val navDirection = HomeFragmentDirections.actionHomeFragmentToInfoProduct(barCodeTextfield.text.toString())
+                findNavController().navigate(navDirection)
             } else {
                 //TODO message("entrer un codebar valide");
             }

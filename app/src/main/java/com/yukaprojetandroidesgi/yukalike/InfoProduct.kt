@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.fragment.navArgs
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class InfoProduct : Fragment(R.layout.fragment_info_product) {
     override fun onCreateView(
@@ -23,6 +25,9 @@ class InfoProduct : Fragment(R.layout.fragment_info_product) {
         super.onViewCreated(view, savedInstanceState)
 
         val codebarNum = view.findViewById<TextView>(R.id.CodebarNum)
-        codebarNum.text = arguments?.getString("Barcode")
+        //codebarNum.text = arguments?.getString("Barcode")
+        val safeArgs: InfoProductArgs by navArgs()
+        val code = safeArgs.barCodeNumber
+        codebarNum.text = code
     }
 }

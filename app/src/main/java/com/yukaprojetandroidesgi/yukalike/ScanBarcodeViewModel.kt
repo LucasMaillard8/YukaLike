@@ -10,11 +10,11 @@ import kotlinx.coroutines.launch
 
 class ScanBarcodeViewModel : ViewModel() {
 
-    val progressState: LiveData<Boolean> get() = _progressState
     private val _progressState = MutableLiveData<Boolean>()
+    val progressState: LiveData<Boolean> get() = _progressState
 
-    val navigation: LiveData<NavDirections?> get() = _navigation
     private val _navigation = MutableLiveData<NavDirections?>()
+    val navigation: LiveData<NavDirections?> get() = _navigation
 
     init {
         _progressState.value = false
