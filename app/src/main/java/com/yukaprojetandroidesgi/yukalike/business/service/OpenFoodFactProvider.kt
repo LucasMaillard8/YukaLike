@@ -22,7 +22,7 @@ object OpenFoodFactProvider {
         openFoodFactAPI = retrofit.create(OpenFoodFactAPI::class.java)
     }
 
-    fun getInfoProduit(codeBarre: String, listener: NetworkListener<Product>) {
+    fun getInfoProduit(codeBarre: Long, listener: NetworkListener<Product>) {
         openFoodFactAPI.getInfoProduit(codeBarre).enqueue(object : Callback<ProductResponseDTO> {
             override fun onFailure(call: Call<ProductResponseDTO>, t: Throwable) {
                 //Throw error
