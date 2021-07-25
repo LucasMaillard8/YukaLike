@@ -8,5 +8,5 @@ import retrofit2.http.Path
 interface OpenFoodFactAPI {
 
     @GET("api/v0/product/{codeBarre}.json")
-    fun getInfoProduit(@Path("codeBarre") codeBarre: Long): Call<ProductResponseDTO>
+    fun getInfoProduit(@Path("codeBarre") codeBarre: String): Call<ProductResponseDTO>
 }
