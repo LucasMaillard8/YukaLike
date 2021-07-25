@@ -22,11 +22,11 @@ object OpenFoodFactProvider {
         openFoodFactAPI = retrofit.create(OpenFoodFactAPI::class.java)
     }
 
-    fun getInfoProduit(codeBarre: Long, listener: NetworkListener<Product>) {
+    fun getInfoProduit(codeBarre: String, listener: NetworkListener<Product>) {
         openFoodFactAPI.getInfoProduit(codeBarre).enqueue(object : Callback<ProductResponseDTO> {
             override fun onFailure(call: Call<ProductResponseDTO>, t: Throwable) {
                 //Throw error
-                Log.d("test failure getProduit", t.toString())
+                Log.d("LV", t.toString())
                 listener.onError(500)
             }
 
@@ -37,9 +37,11 @@ object OpenFoodFactProvider {
                     statusCode
                 )
                 else {
-                    //Get token from json response
+                    //Get data from json response
                     val productDTO = response.body()
                     productDTO?.let {
+                        Log.d("LV", "code product : ${it.code}")
+                        Log.d("LV", "brand product : ${it.product.marque}")
                         listener.onSuccess(ProductMapper().mapProductFromResponse(it))
                     } ?: listener.onError(500)
                 }

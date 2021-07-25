@@ -12,7 +12,7 @@ data class ProductResponseDTO(
 )
 
 data class ProductDTO(
-    @SerializedName("brand_owner")
+    @SerializedName("brands")
     val marque: String,
 )
 
