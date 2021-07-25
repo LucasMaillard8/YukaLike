@@ -15,4 +15,6 @@
     <string name="fillInBarCode">Entrer le code bar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sugar">Sugar :</string>
+    <string name="cals">Calories :</string>
 </resources>

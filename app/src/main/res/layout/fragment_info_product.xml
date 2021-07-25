@@ -6,14 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".InfoProduct">
 
-
     <TextView
-        android:id="@+id/CodebarNum"
+        android:id="@+id/brend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="bonjour"
+        android:text="Brend"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="34sp"
+        android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/sugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sugar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brend"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <TextView
+        android:id="@+id/sugarApi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sugar"
+        app:layout_constraintStart_toEndOf="@+id/sugar"
+        app:layout_constraintTop_toTopOf="@+id/sugar" />
+
+    <TextView
+        android:id="@+id/cals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cals"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/brend"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <TextView
+        android:id="@+id/calsApi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="0"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cals"
+        app:layout_constraintStart_toEndOf="@+id/cals"
+        app:layout_constraintTop_toTopOf="@+id/cals" />
 </androidx.constraintlayout.widget.ConstraintLayout>
