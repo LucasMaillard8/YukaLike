@@ -11,31 +11,35 @@ import androidx.navigation.fragment.navArgs
 import com.yukaprojetandroidesgi.yukalike.business.model.Product
 import com.yukaprojetandroidesgi.yukalike.business.service.NetworkListener
 import com.yukaprojetandroidesgi.yukalike.business.service.OpenFoodFactProvider
+import com.yukaprojetandroidesgi.yukalike.databinding.FragmentInfoProductBinding
+import com.yukaprojetandroidesgi.yukalike.databinding.FragmentSignInBinding
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class InfoProduct : Fragment(R.layout.fragment_info_product) {
+    private lateinit var binding: FragmentInfoProductBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //_binding = FragmentHistoryBinding.inflate(inflater, container, false)
-        //val view = binding.root
+        binding = FragmentInfoProductBinding.inflate(inflater, container, false)
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val codebarNum = view.findViewById<TextView>(R.id.CodebarNum)
         //codebarNum.text = arguments?.getString("Barcode")
         val safeArgs: InfoProductArgs by navArgs()
         val code = safeArgs.barCodeNumber
         OpenFoodFactProvider.getInfoProduit(code, object: NetworkListener<Product> {
             override fun onSuccess(data: Product) {
-                Log.d("LV", "success : ${data.marque}")
-                codebarNum.text = data.marque
+                //Log.d("LV", "success : ${data.marque}")
+                binding.brend.text = data.marque
+                binding.calsApi.text = data.nutriments.calories.toString()
+                binding.sugarApi.text = data.nutriments.sugar.toString()
             }
 
             override fun onError(code: Int) {
