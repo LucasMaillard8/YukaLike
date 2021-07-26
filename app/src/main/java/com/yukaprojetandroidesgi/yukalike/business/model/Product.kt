@@ -7,5 +7,7 @@ data class Product (
 
 data class Nutriments(
     val calories: Float,
-    val sugar: Float
+    val caloriesUnit: String,
+    val sugar: Float,
+    val sugarUnit: String
 )

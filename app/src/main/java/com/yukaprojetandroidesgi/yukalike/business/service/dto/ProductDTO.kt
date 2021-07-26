@@ -20,15 +20,23 @@ data class ProductDTO(
 )
 
 data class NutrimentDTO(
-    @SerializedName("energy-kcal")
+    @SerializedName("energy-kcal_100g")
     val calories: Float,
-    @SerializedName("sugars")
-    val sugar: Float
+    @SerializedName("energy-kcal_unit")
+    val caloriesUnit: String,
+    @SerializedName("sugars_100g")
+    val sugar: Float,
+    @SerializedName("sugars_unit")
+    val sugarUnit: String
 )
 
 class ProductMapper {
     fun mapProductFromResponse(dto: ProductResponseDTO): Product {
-        val nutriments = Nutriments(dto.product.nutriment.calories, dto.product.nutriment.sugar)
+        val nutriments = Nutriments(
+            dto.product.nutriment.calories,
+            dto.product.nutriment.caloriesUnit,
+            dto.product.nutriment.sugar,
+            dto.product.nutriment.sugarUnit)
         return Product(dto.product.marque, nutriments)
     }
 }
