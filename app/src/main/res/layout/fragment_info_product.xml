@@ -10,7 +10,7 @@
         android:id="@+id/brend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Brend"
+        android:text="Brand"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="34sp"
         android:textStyle="bold|italic"
@@ -67,4 +67,20 @@
         app:layout_constraintBottom_toBottomOf="@+id/cals"
         app:layout_constraintStart_toEndOf="@+id/cals"
         app:layout_constraintTop_toTopOf="@+id/cals" />
+
+    <TextView
+        android:id="@+id/sugarUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unit"
+        app:layout_constraintBottom_toBottomOf="@+id/sugarApi"
+        app:layout_constraintStart_toEndOf="@+id/sugarApi" />
+
+    <TextView
+        android:id="@+id/calsUnit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Unit"
+        app:layout_constraintBottom_toBottomOf="@+id/calsApi"
+        app:layout_constraintStart_toEndOf="@+id/calsApi" />
 </androidx.constraintlayout.widget.ConstraintLayout>

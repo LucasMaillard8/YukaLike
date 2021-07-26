@@ -43,5 +43,12 @@
             android:name="barCodeNumber"
             app:argType="string"
             android:defaultValue="errorBarCode" />
+        <action
+            android:id="@+id/action_infoProduct_to_errorBarcodeFragment"
+            app:destination="@id/errorBarcodeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/errorBarcodeFragment"
+        android:name="com.yukaprojetandroidesgi.yukalike.ErrorBarcodeFragment"
+        android:label="ErrorBarcodeFragment" />
 </navigation>

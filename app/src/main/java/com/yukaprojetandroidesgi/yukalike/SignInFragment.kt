@@ -84,8 +84,6 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
             }
     }
 
-
-
     private fun createUser(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
