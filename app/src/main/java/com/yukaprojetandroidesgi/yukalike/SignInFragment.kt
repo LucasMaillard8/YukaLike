@@ -64,9 +64,6 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
     override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
-        if(currentUser != null){
-            reload()
-        }
     }
 
     private fun signIn(email: String, password: String) {
@@ -126,10 +123,6 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                     updateUI(null)
                 }
             }
-    }
-
-    private fun reload() {
-        //TODO
     }
 
     private fun updateUI(user: FirebaseUser?) {

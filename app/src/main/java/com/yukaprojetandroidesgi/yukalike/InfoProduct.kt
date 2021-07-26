@@ -6,15 +6,12 @@ import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.yukaprojetandroidesgi.yukalike.business.model.Product
 import com.yukaprojetandroidesgi.yukalike.business.service.NetworkListener
 import com.yukaprojetandroidesgi.yukalike.business.service.OpenFoodFactProvider
 import com.yukaprojetandroidesgi.yukalike.databinding.FragmentInfoProductBinding
-import com.yukaprojetandroidesgi.yukalike.databinding.FragmentSignInBinding
-import kotlinx.android.synthetic.main.fragment_home.*
 
 class InfoProduct : Fragment(R.layout.fragment_info_product) {
     private lateinit var binding: FragmentInfoProductBinding

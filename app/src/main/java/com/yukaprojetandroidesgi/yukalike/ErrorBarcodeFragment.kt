@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-class ErrorBarcodeFragment : Fragment() {
+class ErrorBarcodeFragment : Fragment(R.layout.fragment_error_barcode) {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
