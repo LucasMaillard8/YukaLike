@@ -58,6 +58,7 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
         }
 
         binding.signInGoogleButton.setOnClickListener { signInWithGoogle() }
+        binding.signUpButton.setOnClickListener { findNavController().navigate(R.id.action_signInFragment_to_signUpFragment) }
     }
 
     override fun onStart() {
@@ -79,26 +80,6 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
                     Log.w(ContentValues.TAG, "signInWithEmail:failure", task.exception)
                     Toast.makeText(requireContext(), "Authentication failed.",
                         Toast.LENGTH_SHORT).show()
-                    updateUI(null)
-                }
-            }
-    }
-
-
-
-    private fun createUser(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Log.d(ContentValues.TAG, "createUserWithEmail:success")
-                    val user = auth.currentUser
-                    updateUI(user)
-                } else {
-                    Log.w(ContentValues.TAG, "createUserWithEmail:failure", task.exception)
-                    Toast.makeText(requireContext(),
-                        "Authentication failed.",
-                        Toast.LENGTH_SHORT
-                    ).show()
                     updateUI(null)
                 }
             }
