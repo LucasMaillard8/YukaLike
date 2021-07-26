@@ -37,18 +37,12 @@ object OpenFoodFactProvider {
                     statusCode
                 )
                 else {
-                    //Get data from json response
                     val productDTO = response.body()
-                    productDTO?.let {
-                        Log.d("LV", "code product : ${it.code}")
-                        Log.d("LV", "brand product : ${it.product.marque}")
-                        listener.onSuccess(ProductMapper().mapProductFromResponse(it))
+                    productDTO?.product?.let {
+                        listener.onSuccess(ProductMapper().mapProductFromResponse(productDTO))
                     } ?: listener.onError(500)
                 }
-
-
             }
-
         })
     }
 }
