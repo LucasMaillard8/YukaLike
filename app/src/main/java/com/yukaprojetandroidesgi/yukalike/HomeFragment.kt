@@ -3,12 +3,15 @@ package com.yukaprojetandroidesgi.yukalike
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.yukaprojetandroidesgi.yukalike.business.service.FirestoreProvider
+import com.yukaprojetandroidesgi.yukalike.business.service.NetworkListener
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
