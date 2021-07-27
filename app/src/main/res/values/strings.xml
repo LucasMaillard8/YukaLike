@@ -25,4 +25,5 @@
     <string name="titleAccount">My account</string>
     <string name="points">Points YukaLike :</string>
     <string name="nextRank">Next rank soon !</string>
+    <string name="createAccount">Create Account</string>
 </resources>

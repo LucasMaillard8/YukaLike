@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.yukaprojetandroidesgi.yukalike.business.model.Product
 import com.yukaprojetandroidesgi.yukalike.business.service.NetworkListener
 import com.yukaprojetandroidesgi.yukalike.business.service.OpenFoodFactProvider
@@ -38,11 +39,13 @@ class InfoProduct : Fragment(R.layout.fragment_info_product) {
             OpenFoodFactProvider.getInfoProduit(code, object: NetworkListener<Product> {
                 override fun onSuccess(data: Product) {
                     Log.d("LV", "success : ${data}")
-                    binding.brend.text = data.marque
+                    binding.brand.text = data.marque
                     binding.calsApi.text = data.nutriments.calories.toString()
                     binding.calsUnit.text = data.nutriments.caloriesUnit
                     binding.sugarApi.text = data.nutriments.sugar.toString()
                     binding.sugarUnit.text = data.nutriments.sugarUnit
+                    Glide.with(requireContext()).load(data.image)
+                        .into(binding.imageProduct)
                 }
 
                 override fun onError(code: Int) {

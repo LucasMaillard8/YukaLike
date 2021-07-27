@@ -17,6 +17,8 @@ data class ProductDTO(
     val marque: String,
     @SerializedName("nutriments")
     val nutriment: NutrimentDTO,
+    @SerializedName("image_front_url")
+    val image: String
 )
 
 data class NutrimentDTO(
@@ -37,6 +39,6 @@ class ProductMapper {
             dto.product.nutriment.caloriesUnit,
             dto.product.nutriment.sugar,
             dto.product.nutriment.sugarUnit)
-        return Product(dto.product.marque, nutriments)
+        return Product(dto.product.marque, nutriments, dto.product.image)
     }
 }
