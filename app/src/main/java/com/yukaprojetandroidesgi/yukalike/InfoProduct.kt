@@ -10,6 +10,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.yukaprojetandroidesgi.yukalike.business.model.Product
+import com.yukaprojetandroidesgi.yukalike.business.service.FirestoreProvider
+import com.yukaprojetandroidesgi.yukalike.business.service.FirestoreProvider.addPointToUser
 import com.yukaprojetandroidesgi.yukalike.business.service.NetworkListener
 import com.yukaprojetandroidesgi.yukalike.business.service.OpenFoodFactProvider
 import com.yukaprojetandroidesgi.yukalike.databinding.FragmentInfoProductBinding
@@ -54,6 +56,7 @@ class InfoProduct : Fragment(R.layout.fragment_info_product) {
                     findNavController().navigate(R.id.action_infoProduct_to_errorBarcodeFragment)
                 }
             })
+            addPointToUser(10)
         }
     }
 }

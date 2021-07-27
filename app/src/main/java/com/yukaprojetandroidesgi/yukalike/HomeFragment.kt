@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.yukaprojetandroidesgi.yukalike.business.service.FirestoreProvider
+import com.yukaprojetandroidesgi.yukalike.business.service.FirestoreProvider.addPointToUser
 import com.yukaprojetandroidesgi.yukalike.business.service.NetworkListener
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -45,11 +46,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 //findNavController().navigate(R.id.action_homeFragment_to_infoProduct, bundle)
                 val navDirection = HomeFragmentDirections.actionHomeFragmentToInfoProduct(barCodeTextfield.text.toString())
                 findNavController().navigate(navDirection)
-            } else {
-                //TODO message("entrer un codebar valide");
             }
-        }
 
+
+        }
+        addPointToUser(1)
         myAccountButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_myAccountFragment) }
     }
 
