@@ -38,7 +38,8 @@
         tools:layout="@layout/fragment_product_scanner" >
         <action
             android:id="@+id/action_productScannerFragment_to_infoProduct"
-            app:destination="@id/infoProduct" />
+            app:destination="@id/infoProduct"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/infoProduct"
