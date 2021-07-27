@@ -69,5 +69,14 @@
         app:layout_constraintTop_toBottomOf="@+id/barCodeTextfield"
         app:layout_constraintVertical_bias="0.06999999" />
 
+    <Button
+        android:id="@+id/myAccountButton"
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:text="@string/myAccount"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

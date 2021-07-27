@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_homeFragment_to_infoProduct"
             app:destination="@id/infoProduct" />
+        <action
+            android:id="@+id/action_homeFragment_to_myAccountFragment"
+            app:destination="@id/myAccountFragment" />
     </fragment>
     <fragment
         android:id="@+id/productScannerFragment"
@@ -63,4 +66,9 @@
         android:id="@+id/errorBarcodeFragment"
         android:name="com.yukaprojetandroidesgi.yukalike.ErrorBarcodeFragment"
         android:label="ErrorBarcodeFragment" />
+    <fragment
+        android:id="@+id/myAccountFragment"
+        android:name="com.yukaprojetandroidesgi.yukalike.MyAccountFragment"
+        android:label="fragment_my_account"
+        tools:layout="@layout/fragment_my_account" />
 </navigation>

@@ -20,4 +20,5 @@
     <string name="myEmail">myEmailValue</string>
     <string name="createUserButton">Create User</string>
     <string name="goToScan">Retour</string>
+    <string name="myAccount">MY ACCOUNT</string>
 </resources>
