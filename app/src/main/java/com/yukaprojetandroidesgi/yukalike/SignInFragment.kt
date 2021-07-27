@@ -1,6 +1,7 @@
 package com.yukaprojetandroidesgi.yukalike
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
@@ -63,23 +64,27 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
     override fun onStart() {
         super.onStart()
-        val currentUser = auth.currentUser
     }
 
     private fun signIn(email: String, password: String) {
-        auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Log.d(ContentValues.TAG, "signInWithEmail:success")
-                    val user = auth.currentUser
-                    updateUI(user)
-                } else {
-                    Log.w(ContentValues.TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(requireContext(), "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
-                    updateUI(null)
+        if(email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(context, "Entrez vos informations", Toast.LENGTH_SHORT).show()
+        } else {
+            auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Log.d(ContentValues.TAG, "signInWithEmail:success")
+                        val user = auth.currentUser
+                        updateUI(user)
+                    } else {
+                        Log.w(ContentValues.TAG, "signInWithEmail:failure", task.exception)
+                        Toast.makeText(requireContext(), "Authentication failed.",
+                            Toast.LENGTH_SHORT).show()
+                        //updateUI(null)
+                    }
                 }
-            }
+        }
+
     }
 
     private fun signInWithGoogle() {
