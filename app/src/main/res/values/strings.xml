@@ -17,8 +17,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sugar">Sugar :</string>
     <string name="cals">Calories :</string>
-    <string name="myEmail">myEmailValue</string>
+    <string name="myEmail">My Email</string>
+    <string name="Email">Email :</string>
     <string name="createUserButton">Create User</string>
     <string name="goToScan">Retour</string>
     <string name="myAccount">MY ACCOUNT</string>
+    <string name="titleAccount">My account</string>
+    <string name="points">Points YukaLike :</string>
+    <string name="nextRank">Next rank soon !</string>
 </resources>
