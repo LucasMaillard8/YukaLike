@@ -52,7 +52,8 @@
             android:defaultValue="errorBarCode" />
         <action
             android:id="@+id/action_infoProduct_to_errorBarcodeFragment"
-            app:destination="@id/errorBarcodeFragment" />
+            app:destination="@id/errorBarcodeFragment"
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
